@@ -11,6 +11,7 @@ class SecondScreen extends StatelessWidget {
     final height = MediaQuery.of(context).size.height;
     final width = MediaQuery.of(context).size.width;
     return SafeArea(
+      top: true,
       child: Scaffold(
           body: Center(
         child: Column(
