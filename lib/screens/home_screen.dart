@@ -46,55 +46,59 @@ class _HomeScreenState extends State<HomeScreen> {
   Widget build(BuildContext context) {
     final height = MediaQuery.of(context).size.height;
     final width = MediaQuery.of(context).size.width;
-    return SafeArea(
-      top: true,
-      child: Scaffold(
-        floatingActionButtonLocation: FloatingActionButtonLocation.centerFloat,
-        floatingActionButton: Container(
-            child: ElevatedButton(
-          style: ElevatedButton.styleFrom(
-              backgroundColor: Colors.blue, foregroundColor: Colors.white),
-          onPressed: () async {
-            await fetchQuote();
-          },
-          child: Text("Get a new quote"),
-        )),
-        body: Center(
-          child: Column(
-            children: [
-              Padding(
-                padding: const EdgeInsets.only(top: 10),
-                child: Text(
-                  "Quotes",
-                  style: TextStyle(fontWeight: FontWeight.w600, fontSize: 40),
+    return Container(
+      color: Colors.white,
+      child: SafeArea(
+        top: true,
+        child: Scaffold(
+          floatingActionButtonLocation:
+              FloatingActionButtonLocation.centerFloat,
+          floatingActionButton: Container(
+              child: ElevatedButton(
+            style: ElevatedButton.styleFrom(
+                backgroundColor: Colors.blue, foregroundColor: Colors.white),
+            onPressed: () async {
+              await fetchQuote();
+            },
+            child: Text("Get a new quote"),
+          )),
+          body: Center(
+            child: Column(
+              children: [
+                Padding(
+                  padding: const EdgeInsets.only(top: 10),
+                  child: Text(
+                    "Quotes",
+                    style: TextStyle(fontWeight: FontWeight.w600, fontSize: 40),
+                  ),
                 ),
-              ),
-              Card(
-                margin: EdgeInsets.symmetric(
-                    horizontal: width * 0.04, vertical: height * 0.05),
-                child: Column(
-                  children: [
-                    Padding(
-                      padding: EdgeInsets.only(top: height * 0.02),
-                      child: Text(
-                        quote.quote.toString(),
-                        style: TextStyle(
-                            fontSize: 18, fontWeight: FontWeight.w600),
-                        textAlign: TextAlign.center,
+                Card(
+                  margin: EdgeInsets.symmetric(
+                      horizontal: width * 0.04, vertical: height * 0.05),
+                  child: Column(
+                    children: [
+                      Padding(
+                        padding: EdgeInsets.only(top: height * 0.02),
+                        child: Text(
+                          quote.quote.toString(),
+                          style: TextStyle(
+                              fontSize: 18, fontWeight: FontWeight.w600),
+                          textAlign: TextAlign.center,
+                        ),
                       ),
-                    ),
-                    Padding(
-                      padding: EdgeInsets.only(bottom: height * 0.02),
-                      child: Text(
-                        "- ${quote.author.toString()}",
-                        style: TextStyle(
-                            fontSize: 16, fontWeight: FontWeight.w500),
-                      ),
-                    )
-                  ],
+                      Padding(
+                        padding: EdgeInsets.only(bottom: height * 0.02),
+                        child: Text(
+                          "- ${quote.author.toString()}",
+                          style: TextStyle(
+                              fontSize: 16, fontWeight: FontWeight.w500),
+                        ),
+                      )
+                    ],
+                  ),
                 ),
-              ),
-            ],
+              ],
+            ),
           ),
         ),
       ),
