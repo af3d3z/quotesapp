@@ -1,0 +1,1 @@
+/home/th3-m0th/Coding/Flutter/quotesapp/build/app/intermediates/cxx/Debug/54h472sv/obj/x86_64
