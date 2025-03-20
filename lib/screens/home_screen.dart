@@ -51,6 +51,7 @@ class _HomeScreenState extends State<HomeScreen> {
       child: SafeArea(
         top: true,
         child: Scaffold(
+          backgroundColor: Colors.white,
           floatingActionButtonLocation:
               FloatingActionButtonLocation.centerFloat,
           floatingActionButton: Container(
