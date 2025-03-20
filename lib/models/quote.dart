@@ -1,7 +1,7 @@
 class Quote {
-  int? id;
-  String? quote;
-  String? author;
+  int id;
+  String quote;
+  String author;
 
-  Quote(int this.id, String this.quote, String this.author);
+  Quote(this.id, this.quote, this.author);
 }
